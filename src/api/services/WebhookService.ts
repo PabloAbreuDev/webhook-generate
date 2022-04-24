@@ -3,7 +3,7 @@ import { validateWebhook } from "../validators/webhook";
 
 export interface IWebhook {
     content: any;
-    retry: number;
+    attempts: number;
     delayRetry: number; //milisegundos
     url: string;
 }
@@ -11,10 +11,9 @@ export interface IWebhook {
 class WebhookService {
     createWebhookService = async (webhook: IWebhook) => {
         validateWebhook(webhook);
-        webhookProducer(webhook);
+        await webhookProducer(webhook);
         return webhook;
     }
-
 }
 
 export default new WebhookService()
