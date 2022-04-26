@@ -17,3 +17,12 @@ Para instalar a aplicação, é necessário que o usuário possua uma instância
 `yarn install`
 
 `yarn prod`
+
+## Documentação
+
+| nome       | tipo   | Descrição                                                                  | obrigatório | exemplo              |
+| ---------- | ------ | -------------------------------------------------------------------------- | ----------- | -------------------- |
+| content    | any    | conteúdo que será enviado via webhook                                      | true        | {}                   |
+| attempts   | number | número de tentativas que serão realizadas                                  | false       | 5                    |
+| delayRetry | number | número um millisegundos que representa o delay entre uma tentativa e outra | false       | 3000                 |
+| url        | string | url para onde serão enviados os dados                                      | true        | http://localhost.com |
